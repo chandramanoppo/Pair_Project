@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
 
       Shoe.hasMany(models.Transaction)
 
+      Shoe.belongsToMany(models.Customer , {through: 'Transaction'})
+
+
     }
   }
   Shoe.init({
