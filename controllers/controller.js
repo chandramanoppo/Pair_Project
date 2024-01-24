@@ -1,10 +1,6 @@
-const {Brand, Customer, Shoe, Transaction, User} = require('../models/index')
-
 class Controller {
-    static getHome(req, res) {
-        res.render('home')
-    }
-    
+  static renderLogin(req, res) {
+    res.render("login");
+  }
 }
-
-module.exports = Controller
+module.exports = Controller;
