@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "chandra22",
-    "database": "Pair_Project",
+    "database": "pair_project",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "port" : 2201
