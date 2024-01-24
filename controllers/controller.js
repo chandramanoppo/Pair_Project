@@ -7,21 +7,21 @@ class Controller {
         // res.send(data)
     }
 
-    static async testingData(req, res) {
+    static async brandList (req, res) {
         try {
-            let users = await User.findOne({})
-            // console.log(users);
-            // res.send(users)
-            let shoes = await Shoe.findAll({
-                include: {
-                    model: Customer,
-                    // include: Customer
-                }
-            })
-            res.send(shoes)
+            let brands = await Brand.findAll()
+            // res.send(brands)
+            res.render('brand' , {brands})
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+        }
+    }
 
-
-
+    static async shoeList (req, res) {
+        try {
+            let shoes = await Shoe.findAll()
+            res.render('shoe' , {shoes})
         } catch (error) {
             console.log(error);
             res.send(error)

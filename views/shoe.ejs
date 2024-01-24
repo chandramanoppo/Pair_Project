@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes List</title>
+</head>
+    <%- include('./component/navbar.ejs') %>
+<body>
+    <h1>Brand List</h1>
+
+    <table border="2">
+        <tr>
+            <th>
+                Name
+            </th>
+           <th>
+                Description
+           </th>
+           <th>
+                Stock
+           </th>
+            <th>
+                Action
+            </th>
+           
+        </tr>
+        <% for(let shoe of shoes) { %>
+        <tr>
+            <td>
+                <%= shoe.name %>
+            </td>
+            <td>
+                <%= shoe.description %>
+            </td>
+            <td>
+                <%= shoe.stock %>
+            </td>
+            <td>
+                <a href=""><button>Buy</button></a>
+            </td>
+            </tr>
+            <% } %>
+
+    </table>
+</body>
+</html>
