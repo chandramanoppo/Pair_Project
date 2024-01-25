@@ -4305,7 +4305,7 @@ fieldset:disabled .btn {
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   min-width: 0;
   height: var(--bs-card-height);
