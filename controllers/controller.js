@@ -41,11 +41,11 @@ class Controller {
             
         }else {
             const error = "invalid username/password"
-            return res.redirect(`/login?error=${error}`)
+            return res.redirect(`/stores/login?error=${error}`)
         }
     }else {
         const error = "invalid username/password"
-        return res.redirect(`/login?error=${error}`)
+        return res.redirect(`/stores/login?error=${error}`)
     }
     } catch (error) {
       res.send(error);
@@ -136,7 +136,7 @@ static async decreaseStock(req, res) {
       let shoes = await Shoe.decrement({stock:1},{where:{id}}, {order: [['id', 'ASC']]})
 
       // console.log(shoes);
-      res.redirect('/stores/shoes')
+      res.redirect(`/stores/shoes/${id}`)
 
   } catch (error) {
       console.log(error);
@@ -152,7 +152,7 @@ static async RenderRestockShoes(req, res) {
 
   // console.log(shoes, "????????????????????????????????????????????????????????????????");
   // res.send(shoes)
-  res.render('restock', {shoes})
+  res.render('restock', {shoes , formatCurrency})
 
   } catch (error) {
       console.log(error);
@@ -162,7 +162,16 @@ static async RenderRestockShoes(req, res) {
 
 static async HandlerestockShoes(req, res) {
   try {
-      
+      // console.log(req.params);
+      let id = req.params.id
+
+      const {stock} = req.body
+
+      let data = await Shoe.update({stock} , {where: {id}})
+
+      console.log(data);
+      res.send(data)
+
   } catch (error) {
       console.log(err);
       res.send(err)

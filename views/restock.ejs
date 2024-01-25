@@ -41,17 +41,18 @@
                         <p class="lead">Stock</p>
                         <div class="d-flex">
                             
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="<%= shoes.stock %>" style="max-width: 3rem" disabled />
-                            <a href="/stores/shoes/<%= shoes.id %>/buy"><button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Buy
-                            </button></a>
-                            
-                            <a href="/stores/shoes/<%= shoes.id %>/restock"><button class="btn btn-outline-dark flex-shrink-0 " type="button" style="margin-left: 15px;">
-                                <i class="bi-cart-fill me-1"></i>
-                                Restock
-                            </button></a>
-                            
+                            <form action="/stores/shoes/<%= shoes.id %>/restock" method="post">
+
+                                <input class="form-control text-center me-3" id="inputQuantity" type="num" value="<%= shoes.stock %>" style="max-width: 3rem" />
+                                
+                                <br>
+
+                                <button class="btn btn-outline-dark flex-shrink-0 " type="submit" >
+                                    <i class="bi-cart-fill me-1"></i>
+                                    Restock
+                                </button>
+                                
+                            </form>
                         </div>
                         
                     </div>
