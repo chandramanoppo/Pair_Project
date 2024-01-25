@@ -22,6 +22,20 @@ module.exports = (sequelize, DataTypes) => {
     CustomerId: DataTypes.INTEGER,
     ShoeId: DataTypes.INTEGER
   }, {
+    hooks:{
+      beforeCreate: (user) => {
+        if(user.code){
+          const codes = Math.floor(1000 + Math.random() * 9000);
+          // console.log(val);
+          user.code = codes + '-' + this.CustomerId
+        }
+      },
+      beforeUpdate: (user) => {
+        const codes = Math.floor(1000 + Math.random() * 9000);
+          // console.log(val);
+          user.code = codes + '-' + this.CustomerId
+      }
+    },
     sequelize,
     modelName: 'Transaction',
   });

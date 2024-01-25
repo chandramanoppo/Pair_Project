@@ -7,9 +7,7 @@ class Controller {
     
     static async registerForm (req, res) {
         try {
-            
             res.render('register')
-            
         } catch (error) {
             console.log(error);
             res.send(error)

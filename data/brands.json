@@ -1,0 +1,19 @@
+ [
+	{
+		"id" : 1,
+		"name" : "Nike",
+		"description" : "Nike offer a wide selection of shoes that meet the needs of such a wide range of runners."
+	},
+	{
+		"id" : 2,
+		"name" : "Adidas",
+		"description" : "Adidas sneakers are known for their comfortable fit, excellent cushioning, and durable materials, notes Williams. "
+		
+	},
+	{
+		"id" : 3,
+		"name" : "Converse",
+		"description" : " but it’s a basic canvas sneaker that’s well done. If you wear it every day, I’d bet you’d get a full year out of them."
+		
+	}
+]
