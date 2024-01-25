@@ -1,0 +1,47 @@
+[
+	{
+		"id" : 5,
+		"name" : "Chuck taylor",
+		"description" : "sepatu ramah di kantong",
+		"stock" : 29,
+		"imageUrl" : "https:\/\/www.converse.id\/media\/catalog\/product\/cache\/1384ea813c36abc3a773dd6494b9b881\/0\/3\/03-CONVERSE-FFSSBCONA-CONA05551C-White.jpg",
+		"price" : 800000,
+		"BrandId" : 3
+	},
+	{
+		"id" : 2,
+		"name" : "Jordan 1 high",
+		"description" : "sepatu mahal",
+		"stock" : 10,
+		"imageUrl" : "https:\/\/static.nike.com\/a\/images\/t_PDP_1728_v1\/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply\/be4275d7-3a88-4592-a9d7-61d615e20ff1\/air-jordan-1-high-og-royal-reimagined-shoes-Pz6fZ9.png",
+		"price" : 2800000,
+		"BrandId" : 1
+	},
+	{
+		"id" : 3,
+		"name" : "Ultraboost ",
+		"description" : "sepatu sultan",
+		"stock" : 10,
+		"imageUrl" : "https:\/\/www.planetsports.asia\/media\/catalog\/product\/cache\/932b880b51303ef8bdfacfab1d810ff5\/0\/1\/01-ADIDAS-F34RUADI5-ADIGZ5159-Black.jpg",
+		"price" : 3300000,
+		"BrandId" : 2
+	},
+	{
+		"id" : 4,
+		"name" : "Yeezy",
+		"description" : "sepatu sultan",
+		"stock" : 15,
+		"imageUrl" : "https:\/\/senikersku.com\/wp-content\/uploads\/2023\/06\/Yeezy-Boost-350-Pirate-Black-2023-1.png",
+		"price" : 6300000,
+		"BrandId" : 2
+	},
+	{
+		"id" : 1,
+		"name" : "Jordan 1 low",
+		"description" : "sepatu mahal",
+		"stock" : 16,
+		"imageUrl" : "https:\/\/static.nike.com\/a\/images\/t_PDP_1728_v1\/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply\/1c0c434c-9802-4556-89c7-a8600b2828d8\/air-jordan-1-low-shoes-6Q1tFM.png",
+		"price" : 1800000,
+		"BrandId" : 1
+	}
+]
