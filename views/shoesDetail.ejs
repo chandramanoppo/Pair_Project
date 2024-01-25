@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes List</title>
+    <title>Shoe Details</title>
 </head>
     <%- include('./component/navbar.ejs') %>
 <body>
-    <h1>Shoe List</h1>
+    <h1>Shoe Details</h1>
 
     <table border="2">
         <tr>
@@ -37,15 +37,13 @@
                 <%= shoe.description %>
             </td>
             <td>
-                <img src="<%= shoe.imageUrl %>" alt="Shoe Picture" style="height: 200px; width: 200px;">
+                <img src="<%= shoe.imageUrl %>" alt="Shoe Picture" style="height: 400px; width: 400px;">
             </td>
             <td>
                 <%= shoe.stock %>
             </td>
             <td>
-                <a href="/shoes/<%= shoe.id %>/buy"><button>Buy</button></a>
-                <a href="/shoes/restock"><button>Restock</button></a>
-
+                <a href="/brands/<%= shoe.id %>/buy"><button>Buy</button></a>
             </td>
             </tr>
             <% } %>

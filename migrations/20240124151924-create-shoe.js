@@ -21,6 +21,9 @@ module.exports = {
       imageUrl: {
         type: Sequelize.TEXT
       },
+      price: {
+        type: Sequelize.INTEGER
+      },
       BrandId: {
         type: Sequelize.INTEGER,
         references: {model: 'Brands', key : 'id'}
