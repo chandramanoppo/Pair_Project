@@ -58,7 +58,7 @@ class Controller {
   
                     req.session.userId = users.id
                     req.session.role = users.role 
-                return res.redirect('/')
+                    return res.redirect('/')
                     
                 }else {
                     const error = "invalid username/password"
@@ -161,6 +161,24 @@ class Controller {
             res.send(error)
         }
     }
+
+    static async getLogOut(req,res) {
+        try {
+            req.session.destroy((err) => {
+                if (err){
+                    res.send(err)
+                } 
+                else {
+                    res.redirect('/login')
+                }
+            })
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+        }
+    }
+
+
 }
 
 module.exports = Controller

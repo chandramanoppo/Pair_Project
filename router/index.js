@@ -12,6 +12,8 @@ router.post('/login', Controller.handleLogin)
 
 router.get('/', Controller.getHome)
 
+router.get('/logout', Controller.getLogOut)
+
 
 router.use(function(req, res, next) {
     console.log(req.session);
@@ -38,6 +40,8 @@ const isAdmin = function(req, res, next) {
         next()
     }    
 }
+
+router.get(isAdmin)
 
 
 router.get('/brands', Controller.brandList)
