@@ -41,7 +41,6 @@ const isAdmin = function(req, res, next) {
     }    
 }
 
-router.get(isAdmin)
 
 
 router.get('/brands', Controller.brandList)
@@ -50,11 +49,16 @@ router.get('/brands/:id/buy', Controller.decreaseStockByBrand)
 
 
 
+
 router.get('/shoes', Controller.shoeList)
 
 router.get('/shoes/:id/buy', Controller.decreaseStock)
 
+router.use(isAdmin)
 
+router.get('/shoes/:id/restock', Controller.RenderRestockShoes)
+
+router.post('/shoes/:id/restock', Controller.HandlerestockShoes)
 
 
 

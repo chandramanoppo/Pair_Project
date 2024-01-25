@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restock</title>
+</head>
+<%- include('./component/navbar') %>
+<body>
+    <h1>Restock Shoe </h1>
+
+        <form action="" method="post">
+            <div>
+                <img src="<%= shoes.imageUrl %>" alt=" shoes Picture" style="width: 350px; height: 350px;">
+            </div>
+            <div>
+                <label for="title" style="font-size: 60px;"><%= shoes.name %></label>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="title" style="font-size: 50px;"><%= shoes.description %></label>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="title" style="font-size: 50px;" >Stock</label>
+                <br>
+                <input type="text" name="stock" value="<%= shoes.stock %>">
+            </div>
+        </form>
+
+     
+</body>
+</html>

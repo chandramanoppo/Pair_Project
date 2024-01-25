@@ -55,7 +55,7 @@ class Controller {
             if(users){ 
                 const valid = bcrypt.compareSync(password, users.password)
                 if(valid){
-  
+                    
                     req.session.userId = users.id
                     req.session.role = users.role 
                     return res.redirect('/')
@@ -68,15 +68,30 @@ class Controller {
                 const error = "invalid username/password"
                 return res.redirect(`/login?error=${error}`)
             }
-
+            
             
         } catch (error) {
             console.log(error);
             res.send(error)
         }
     }
-
-
+    
+    static async getLogOut(req,res) {
+        try {
+            req.session.destroy((err) => {
+                if (err){
+                    res.send(err)
+                } 
+                else {
+                    res.redirect('/login')
+                }
+            })
+        } catch (error) {
+            console.log(error);
+            res.send(error)
+        }
+    }
+    
     static getHome(req, res) {
         res.render('home')
         // let data = User.findAll()
@@ -117,7 +132,7 @@ class Controller {
                 order: [['id', 'ASC']]
                 
             })
-            console.log(shoes);
+            // console.log(shoes);
             // res.send(shoes)
             res.render('shoesDetail', {shoes})
             // console.log(shoes);
@@ -146,7 +161,7 @@ class Controller {
 
     static async decreaseStockByBrand(req, res){
         try {
-            console.log(req.params);
+            // console.log(req.params);
             let id = req.params.id
 
             let shoes = await Shoe.decrement({stock:1},{where:{id}})
@@ -162,23 +177,31 @@ class Controller {
         }
     }
 
-    static async getLogOut(req,res) {
+
+    static async RenderRestockShoes(req, res) {
         try {
-            req.session.destroy((err) => {
-                if (err){
-                    res.send(err)
-                } 
-                else {
-                    res.redirect('/login')
-                }
-            })
+        //    console.log(req.params);
+        let id = req.params.id
+        let shoes = await Shoe.findOne({where : {id}})
+
+        // console.log(shoes, "????????????????????????????????????????????????????????????????");
+        // res.send(shoes)
+        res.render('restock', {shoes})
+
         } catch (error) {
             console.log(error);
             res.send(error)
         }
     }
 
-
+    static async HandlerestockShoes(req, res) {
+        try {
+            
+        } catch (error) {
+            console.log(err);
+            res.send(err)
+        }
+    }
 }
 
 module.exports = Controller
