@@ -14,8 +14,30 @@ module.exports = (sequelize, DataTypes) => {
   }
   Brand.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
+      name: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Name cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Name cannot be empty'
+          }
+        }
+      },
+      description: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Description cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Description cannot be empty'
+          }
+        }
+      },
     },
     {
       sequelize,

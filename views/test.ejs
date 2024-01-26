@@ -17,11 +17,13 @@
 	<%- include('./component/navbar2') %>
 	<body>
 		<div>
+			<form action="/stores/shoes" method="get">
 			<input type="text" name="search" placeholder="Seach here ...">
 			<button type="submit">Search</button>
-			<button>Nike</button>
-			<button>Adidas</button>
-			<button>Converse</button>
+		</form>
+			<a href="/stores/shoes?filter=Nike"><button>Nike</button></a>
+			<a href="/stores/shoes?filter=Adidas"><button>Adidas</button></a>
+			<a href="/stores/shoes?filter=Converse"><button>Converse</button></a>
 		</div>
 		
 
@@ -70,7 +72,7 @@
 							</td>
 				          
 						  <td>
-							  <a href="/stores/shoes/<%= shoe.id %>/buy"><button>Buy</button></a>
+							  <a href="/stores/shoes/<%= shoe.id %>"><button>Checkout</button></a>
 						</td>
 					</tr>
 					

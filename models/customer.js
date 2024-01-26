@@ -20,10 +20,54 @@ module.exports = (sequelize, DataTypes) => {
   }
   Customer.init(
     {
-      username: DataTypes.STRING,
-      balance: DataTypes.INTEGER,
-      gender: DataTypes.STRING,
-      userId: DataTypes.INTEGER,
+      username: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Username cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Username cannot be empty'
+          }
+        }
+      },
+      balance: {
+        type :DataTypes.INTEGER,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Balance cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Balance cannot be empty'
+          }
+        }
+      },
+      gender: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Gender cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Gender cannot be empty'
+          }
+        }
+      },
+      userId: {
+        type :DataTypes.INTEGER,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'UserId cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'UserId cannot be empty'
+          }
+        }
+      }
     },
     {
       sequelize,

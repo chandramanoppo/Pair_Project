@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 const {Brand, Customer, Shoe, Transaction, User} = require('../models/index');
 const formatCurrency = require("../helper/formatcurreny");
+const {Op} = require("sequelize")
 
 // formatCurrency
 class Controller {
@@ -111,15 +112,30 @@ static async shoesDetail(req, res){
 
 static async shoeList (req, res) {
   try {
+    let search = req.query.search
+    let filter = req.query.filter
+   
+   
       let shoes = await Shoe.findAll(
          {
           include : {
             model : Brand,
-            attributes: ['name']
-          }
+            attributes: ['name'],
+            where : {
+              name: {
+                [Op.iLike] : filter ? `%${filter}%` : '%%',
+              }
+            }
+          },
+          where: {
+            name :{
+              [Op.iLike] : search ? `%${search}%` : '%%',
+            },
+          },order: [['id', 'ASC']]
+        
         },
-      {order: [['id', 'ASC']]
-    })
+      )
+    console.log(search, `<<<<<<<<<<<<<<<<<<`);
       // res.send(shoes)
       res.render('test' , {shoes , formatCurrency})
   } catch (error) {
@@ -167,10 +183,14 @@ static async HandlerestockShoes(req, res) {
 
       const {stock} = req.body
 
-      let data = await Shoe.update({stock} , {where: {id}})
+      // console.log(req.body , "?????????????????????????????????????????????????????");
 
-      console.log(data);
-      res.send(data)
+      let data = await Shoe.update({stock: stock  } , {where: {id}})
+
+      // console.log(data);
+      // res.send(data)
+      res.redirect(`/stores/shoes/${id}`)
+
 
   } catch (error) {
       console.log(err);

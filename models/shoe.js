@@ -20,12 +20,78 @@ module.exports = (sequelize, DataTypes) => {
   }
   Shoe.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      stock: DataTypes.INTEGER,
-      price: DataTypes.INTEGER,
-      imageUrl: DataTypes.STRING,
-      BrandId: DataTypes.INTEGER,
+      name: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Name cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Name cannot be empty'
+          }
+        }
+      },
+      description: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Description cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Description cannot be empty'
+          }
+        }
+      },
+      stock: {
+        type :DataTypes.INTEGER,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Stock cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Stock cannot be empty'
+          }
+        }
+      },
+      price: {
+        type :DataTypes.INTEGER,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'Price cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'Price cannot be empty'
+          }
+        }
+      },
+      imageUrl: {
+        type :DataTypes.STRING,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'ImageURL cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'ImageURL cannot be empty'
+          }
+        }
+      },
+      BrandId: {
+        type :DataTypes.INTEGER,
+        allowNull: false,
+        validate :{
+          notNull:{
+            msg : 'BrandId cannot be NUll'
+          },
+          notEmpty :{
+            msg : 'BrandId cannot be empty'
+          }
+        }
+      },
     },
     {
       sequelize,
