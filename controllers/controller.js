@@ -153,10 +153,20 @@ static async decreaseStock(req, res) {
 
       // console.log(shoes);
       res.redirect(`/stores/shoes/${id}`)
+      // res.render('trasacsion', {shoes, })
 
   } catch (error) {
       console.log(error);
       res.send(error)
+  }
+}
+
+static async BuyingTransaction(req, res){
+  try {
+    console.log(req.params);
+  } catch (error) {
+    console.log(error);
+    res.send(error)
   }
 }
 

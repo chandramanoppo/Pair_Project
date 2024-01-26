@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       email: {
         type :DataTypes.STRING,
         allowNull: false,
+        unique: {
+          msg: `Email sudah terpakai`
+        },
         validate :{
           notNull:{
             msg : 'Email cannot be NUll'
@@ -41,11 +44,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       role: {
         type :DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate :{
-          notNull:{
-            msg : 'Role cannot be NUll'
-          },
           notEmpty :{
             msg : 'Role cannot be empty'
           }

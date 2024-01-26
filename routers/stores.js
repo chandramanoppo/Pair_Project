@@ -43,6 +43,9 @@ router.get('/shoes/:id', Controller.shoesDetail)
 
 router.get('/shoes/:id/buy', Controller.decreaseStock)
 
+router.post('/shoes/:id/buy', Controller.BuyingTransaction)
+
+
 
 router.use(isAdmin)
 
